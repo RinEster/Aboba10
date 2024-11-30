@@ -182,7 +182,7 @@ namespace Aboba.Pages
 
         public void LoadRecommendedUsers(string[] recommendedUsers)
         {
-            // Преобразуем массив в строку для передачи в хранимую процедуру
+            //алгоритм работает, но у нас проблемы с выводом
             string users = string.Join(",", recommendedUsers);
 
            // List<UserTg> userListTg = new List<UserTg>();
