@@ -1,0 +1,56 @@
+﻿<UserControl x:Class="Aboba.Pages.Settings"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Aboba.Pages"
+             Height="450"  Width="450"   Background="Transparent">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="50"/>
+        </Grid.RowDefinitions>
+        <TextBlock Foreground="Wheat" Text="Settings:" FontSize="25"/>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <TextBlock HorizontalAlignment="Center" Foreground="White" Grid.Row="0" Grid.Column="0" Text="Name: " FontSize="20"  />
+            <TextBlock HorizontalAlignment="Center" Foreground="White" Grid.Row="1" Grid.Column="0" Text="Surname: " FontSize="20"  />
+            <TextBlock HorizontalAlignment="Center" Foreground="White" Grid.Row="2" Grid.Column="0" Text="Age: " FontSize="20"  />
+            <TextBox Background="#FFF4C388" Opacity="0.6" Foreground="White" Grid.Row="0" Grid.Column="1" x:Name="newname"/>
+            <TextBox Background="#FFF4C388" Opacity="0.6" Foreground="White" Grid.Row="1" Grid.Column="1" x:Name="newsurname"/>
+            <TextBox Background="#FFF4C388" Opacity="0.6" Foreground="White" Grid.Row="2" Grid.Column="1" x:Name="newage"/>
+            <TextBlock HorizontalAlignment="Center" Foreground="White" Grid.Row="0" Grid.Column="2" Text="Country: " FontSize="20"  />
+            <TextBlock HorizontalAlignment="Center" Foreground="White" Grid.Row="1" Grid.Column="2" Text="Tg ID: " FontSize="20"  />
+            <TextBlock HorizontalAlignment="Center" Foreground="White" Grid.Row="2" Grid.Column="2" Text="City: " FontSize="20"  />
+            <TextBox Background="#FFF4C388" Opacity="0.6" Foreground="White" Grid.Row="0" Grid.Column="3" x:Name="newcountry"/>
+            <TextBox Background="#FFF4C388" Opacity="0.6" Foreground="White" Grid.Row="1" Grid.Column="3" x:Name="newregion"/>
+            <TextBox Background="#FFF4C388" Opacity="0.6" Foreground="White" Grid.Row="2" Grid.Column="3" x:Name="newcity"/>
+        </Grid>
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="150"/>
+            </Grid.ColumnDefinitions>
+            <Button Grid.Column="1" Content="Update" x:Name="update" Click="update_Click"
+                    HorizontalAlignment="Center"
+                        Width="200"
+                        FontFamily="SemiBold" 
+                    FontSize="25"
+                    Foreground="DarkGoldenrod"
+                    BorderThickness="0" 
+                    Background="White"/>
+        </Grid>
+    </Grid>
+</UserControl>

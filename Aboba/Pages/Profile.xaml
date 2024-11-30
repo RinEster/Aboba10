@@ -1,0 +1,65 @@
+﻿<UserControl x:Class="Aboba.Pages.Profile"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Aboba.Pages"
+             mc:Ignorable="d"
+        Height="450"  Width="450"      Background="Transparent">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="0.75*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <TextBlock Foreground="Wheat"  FontSize="25" Text="Profile settings:"/>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="150"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Image Grid.Column="0" Source="https://w7.pngwing.com/pngs/190/503/png-transparent-the-binding-of-isaac-afterbirth-plus-video-games-mod-biblethump-game-symmetry-head.png" Stretch="Fill"/>
+
+            <Grid Grid.Column="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid Grid.Column="0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <TextBlock Foreground="White" FontSize="16" x:Name="loginUser" Text="Login: "/>
+                    <TextBlock Foreground="White" Grid.Row="1" FontSize="16" x:Name="nameUser" Text="Name: "/>
+                    <TextBlock Foreground="White" Grid.Row="2" FontSize="16" x:Name="surnameUser" Text="Surname: "/>
+                    <TextBlock Foreground="White" Grid.Row="3" FontSize="16" x:Name="ageUser" Text="Age: "/>
+                </Grid>
+                <Grid Grid.Column="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <TextBlock Foreground="White" FontSize="16" x:Name="countryUser" Text="Country: "/>
+                    <TextBlock Foreground="White" Grid.Row="2" FontSize="16" x:Name="regionUser" Text="Tg ID: "/>
+                    <TextBlock Foreground="White" Grid.Row="1" FontSize="16" x:Name="cityUser" Text="City: "/>
+                </Grid>
+            </Grid>
+        </Grid>
+        <Grid Grid.Row="2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <TextBlock Foreground="Wheat" Text="Preferences:" FontSize="25"/>
+            <StackPanel x:Name="pref" Grid.Row="1">
+                <ScrollViewer MaxHeight="150" MinHeight="150">
+                    <ListBox x:Name="prefList" Background="Transparent"/>
+                </ScrollViewer>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</UserControl>

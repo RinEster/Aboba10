@@ -1,0 +1,22 @@
+﻿<UserControl x:Class="Aboba.Pages.relationship"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Aboba.Pages"
+            mc:Ignorable="d"
+            Height="450"  Width="450"      Background="Transparent">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="50"/>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="1">
+            <DataGrid x:Name="favorit" MinHeight="200" MinWidth="200"/>
+        </StackPanel>
+        <TextBlock Grid.Row="2" FontSize="20" Foreground="White" Text="regionLoc - это Telegramm Id"/>
+
+    </Grid>
+</UserControl>
