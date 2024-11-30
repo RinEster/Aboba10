@@ -14,7 +14,8 @@
             <RowDefinition Height="50"/>
         </Grid.RowDefinitions>
         <StackPanel Grid.Row="1">
-            <DataGrid x:Name="favorit" MinHeight="200" MinWidth="200"/>
+            <!--<DataGrid x:Name="favorit" MinHeight="200" MinWidth="200"/>-->
+            <ListBox x:Name="favorit" />
         </StackPanel>
         <TextBlock Grid.Row="2" FontSize="20" Foreground="White" Text="regionLoc - это Telegramm Id"/>
 

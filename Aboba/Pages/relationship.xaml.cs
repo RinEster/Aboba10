@@ -151,27 +151,29 @@ namespace Aboba.Pages
             }
 
             string[] recommendedUsers = user.recommendUsers(user, users);
-            for(int i = 0; i<recommendedUsers.Length; i++)
+            favorit.ItemsSource = recommendedUsers;
+            for (int i = 0; i<recommendedUsers.Length; i++)
             {
-                using (SqlConnection connection = new SqlConnection(MainWindow.ConnStrA))
-                {
-                    connection.Open();
-                    using (SqlCommand command = new SqlCommand("LoginAndTg", connection))
-                    {
-                        command.CommandType = CommandType.StoredProcedure;
 
-                        command.Parameters.AddWithValue("@login", recommendedUsers[i]);
+                //using (SqlConnection connection = new SqlConnection(MainWindow.ConnStrA))
+                //{
+                //    connection.Open();
+                //    using (SqlCommand command = new SqlCommand("LoginAndTg", connection))
+                //    {
+                //        command.CommandType = CommandType.StoredProcedure;
+
+                //        command.Parameters.AddWithValue("@login", recommendedUsers[i]);
                        
-                        command.ExecuteScalar();
+                //        command.ExecuteScalar();
 
-                        SqlDataAdapter adapter = new SqlDataAdapter(command);
-                        DataTable dataTable = new DataTable();
-                        adapter.Fill(dataTable);
+                //        SqlDataAdapter adapter = new SqlDataAdapter(command);
+                //        DataTable dataTable = new DataTable();
+                //        adapter.Fill(dataTable);
 
-                        favorit.ItemsSource = dataTable.DefaultView;
+                //        favorit.ItemsSource = dataTable.DefaultView;
 
-                    }
-                }
+                //    }
+                //}
                 
             }
 
