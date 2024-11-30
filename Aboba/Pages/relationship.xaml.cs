@@ -178,5 +178,45 @@ namespace Aboba.Pages
         
 
         }
+
+
+        public void LoadRecommendedUsers(string[] recommendedUsers)
+        {
+            // Преобразуем массив в строку для передачи в хранимую процедуру
+            string users = string.Join(",", recommendedUsers);
+
+           // List<UserTg> userListTg = new List<UserTg>();
+
+            using (SqlConnection connection = new SqlConnection(MainWindow.ConnStrA))
+            {
+                connection.Open();
+                using (SqlCommand command = new SqlCommand("LoginAndTg", connection))
+                {
+                    command.CommandType = CommandType.StoredProcedure;
+
+                    command.Parameters.AddWithValue("@loginList", users);
+
+                    SqlDataReader reader = command.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        //UserTg usertg = new UserTg
+                        //{
+                        //    Login = reader["Login"].ToString(),
+                        //    Tg = reader["Tg"].ToString()
+                        //};
+                        //userListTg.Add(usertg);
+                        //MessageBox.Show(usertg.Tg);
+                    }
+                }
+            }
+
+        //   favorit.ItemsSource = userListTg;
+        }
+        //public class UserTg
+        //{
+        //    public string Login { get; set; }
+        //    public string Tg { get; set; }
+        //}
+
     }
 }
